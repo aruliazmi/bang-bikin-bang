@@ -27,8 +27,8 @@ OTP dikirim via API Fonnte dan data tersimpan ke MySQL (`playerucp`).
 ## 📦 Instalasi
 
 ```bash
-git clone https://github.com/username/ban-bikin-bang.git
-cd ban-bikin-bang
+git clone https://github.com/username/bang-bikin-bang.git
+cd bang-bikin-bang
 npm install
 ```
 
