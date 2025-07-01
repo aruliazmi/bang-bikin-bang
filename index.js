@@ -1,4 +1,4 @@
-const { OTP } = require('./db');
+const { PlayerUCP } = require('./db');
 require('./deploy-commands.js');
 require('dotenv').config();
 const axios = require('axios');
