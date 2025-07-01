@@ -9,7 +9,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 });
 
 const PlayerUCP = sequelize.define('playerucp', {
-  username: {
+  ucp: {
     type: DataTypes.STRING,
     allowNull: false
   },
@@ -17,11 +17,11 @@ const PlayerUCP = sequelize.define('playerucp', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  code: {
+  verifycode: {
     type: DataTypes.STRING(5),
     allowNull: false
   },
-  discord_id: {
+  DiscordID: {
     type: DataTypes.STRING,
     allowNull: false
   },
