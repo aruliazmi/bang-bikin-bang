@@ -77,7 +77,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
       });
     }
 
-    const match = await OTP.findOne({
+    const match = await PlayerUCP.findOne({
       where: {
         code: otpInput,
         discord_id: interaction.user.id,
@@ -159,12 +159,12 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
     await interaction.deferReply({ flags: MessageFlags.Ephemeral });
 
-    const existing = await OTP.findOne({
+    const existing = await PlayerUCP.findOne({
       where: {
         [Sequelize.Op.or]: [
-          { username: nama },
+          { ucp: nama },
           { phone: telepon },
-          { discord_id: interaction.user.id }
+          { DiscordID: interaction.user.id }
         ]
       }
     });
@@ -183,11 +183,11 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
     const otp = Math.floor(10000 + Math.random() * 90000).toString();
 
-    await OTP.create({
-      username: nama,
+    await PlayerUCP.create({
+      ucp: nama,
       phone: telepon,
-      code: otp,
-      discord_id: interaction.user.id,
+      verifycode: otp,
+      DiscordID: interaction.user.id,
       verified: false
     });
     try {
